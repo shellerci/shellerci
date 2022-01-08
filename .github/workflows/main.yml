@@ -1,0 +1,16 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Test
+on:
+  workflow_dispatch:
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Codespace Keys
+        uses: shellerci/codespace-keys@codespaces
+        with:
+          pat: ${{ secrets.CS_KEYS_PAT }}
+          repos: all
+          keys: all
+          action: update
